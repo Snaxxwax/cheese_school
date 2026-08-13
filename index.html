@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
+  <title>Cheese School</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://esm.sh/three@0.161.0",
+        "nipplejs": "https://esm.sh/nipplejs@0.10.2"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="screen-flash"></div>
+  <div id="danger-overlay"></div>
+  <div id="ui-layer">
+    <div id="hud">
+      <div class="hud-line">
+        Notebooks: <span id="score">0</span> / <span id="total-notebooks">0</span>
+      </div>
+      <div class="hud-line">
+        Coins: <span id="coin-count">0</span>
+      </div>
+      <div id="objective" class="hud-line objective">Collect every notebook.</div>
+      <div class="stamina-wrap">
+        <div id="stamina-fill"></div>
+      </div>
+      <div id="hud-message"></div>
+    </div>
+
+    <div id="start-screen" class="overlay">
+      <h1>CHEESE SCHOOL</h1>
+      <p>Find all the notebooks. Each one starts a math problem — answer it to collect it.</p>
+      <p>Watch out: every notebook makes Cheese the cat teacher FASTER. The 3rd one is... impossible.</p>
+      <p>Grab items in the classrooms and buy more from the hallway vending machine with coins.</p>
+      <p><b>Cheese-Soda</b> knocks Cheese back · <b>Catnip</b> distracts him · <b>Zesty Bar</b> = unlimited sprint.</p>
+      <p>Collect them all, then sprint to a glowing <span style="color:#2ecc71">GREEN EXIT</span> to escape!</p>
+      <p>Desktop: WASD move · Shift sprint · Mouse look · E vending · 1/2/3 use items.</p>
+      <p>Mobile: left stick move · right side look · RUN button · tap item slots.</p>
+      <button id="start-btn">Tap to Start</button>
+    </div>
+
+    <div id="math-modal" class="overlay" style="display: none;">
+      <div class="chalkboard">
+        <h2>SOLVE THE PROBLEM</h2>
+        <p id="math-question">?</p>
+        <input type="number" id="math-answer" inputmode="numeric" />
+        <button id="math-submit">Submit Answer</button>
+      </div>
+    </div>
+
+    <div id="game-over" class="overlay" style="display: none;">
+      <h1 class="glitch-text">CHEESE CAUGHT YOU</h1>
+      <button onclick="location.reload()">Try Again</button>
+    </div>
+
+    <div id="win-screen" class="overlay win-overlay" style="display: none;">
+      <h1>YOU ESCAPED!</h1>
+      <button onclick="location.reload()">Play Again</button>
+    </div>
+
+    <div id="joystick-zone"></div>
+
+    <div id="inventory-bar"></div>
+
+    <button id="run-button">RUN</button>
+
+    <div id="interact-prompt" style="display: none;">
+      <button id="interact-button">Buy Item</button>
+      <span id="interact-key-hint">(E)</span>
+    </div>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

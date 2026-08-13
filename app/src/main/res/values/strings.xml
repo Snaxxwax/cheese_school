@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cheese School</string>
+    <string name="solve_problem">Solve the problem</string>
+    <string name="submit_answer">Submit answer</string>
+    <string name="answer_hint">Answer</string>
+</resources>
